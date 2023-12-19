@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+service Fart {
+  rpc DoCmd (CmdRequest) returns (CmdResponse) {}
+}
+
+message CmdRequest {
+  string cmd = 1;
+}
+
+message CmdResponse {
+  string text = 1;
+}
+
+option go_package = "/;proto";
