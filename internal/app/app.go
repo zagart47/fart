@@ -2,16 +2,15 @@ package app
 
 import (
 	"fart/internal/app/grpcapp"
-	"log/slog"
 )
 
 type App struct {
 	GRPCSrv *grpcapp.App
 }
 
-func New(log *slog.Logger, grpcPort int) *App {
+func New(grpcPort string) *App {
 
-	grpcApp := grpcapp.New(log, grpcPort)
+	grpcApp := grpcapp.New(grpcPort)
 	return &App{
 		GRPCSrv: grpcApp,
 	}
