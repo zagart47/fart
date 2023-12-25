@@ -9,15 +9,13 @@ import (
 
 type App struct {
 	gRPCServer *grpc.Server
-	host       string
 }
 
-func New(host string) *App {
+func New() *App {
 	gRPCServer := grpc.NewServer()
 	head.Register(gRPCServer)
 	return &App{
 		gRPCServer: gRPCServer,
-		host:       host,
 	}
 }
 
